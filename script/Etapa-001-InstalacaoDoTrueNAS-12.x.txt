@@ -1,0 +1,127 @@
+Autor: Robson Vaamonde
+Procedimentos em TI: http://procedimentosemti.com.br
+Bora para Prática: http://boraparapratica.com.br
+Robson Vaamonde: http://vaamonde.com.br
+Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
+Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
+Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
+YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
+LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+Data de criação: 31/03/2021
+Data de atualização: 31/03/2021
+Versão: 0.01
+Testado e homologado no TrueNAS 12.x
+
+Seleção do Hardware do TrueNAS: https://www.truenas.com/docs/core/introduction/corehardwareguide/
+
+Primeira etapa: Download da ISO do TrueNAS (Link direto sem necessidade de e-mail)
+01. Link de download do TrueNAS: https://download.freenas.org/12.0/STABLE/U2.1/x64/
+
+Segunda etapa: Criação e Configuração da Máquina Virtual no Oracle VirtualBOX
+Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
+01. Ferramentas;
+	Novo
+02. Nome e Sistema Operacional:
+	Nome: TrueNAS
+	Pasta da Máquina: (deixar o padrão do sistema) 
+	Tipo: BSD
+	Versão: FreeBSD (64-bit)
+	<Próximo>
+03. Tamanho da memória:
+	Tamanho: 4096MB
+	<Próximo>
+04. Disco Rígido:
+	Criar um novo disco rígido virtual agora
+	<Criar>
+05. Tipo de arquivo de disco rígido
+	VDI (VirtualBOX Disk Image)
+	<Próximo>
+06. Armazenamento em disco rígido físico
+	Dinamicamente alocado
+	<Próximo>
+07. Localização e tamanho do arquivo
+	Localização: (deixar o padrão do sistema)
+	Tamanho do disco: 16GB
+	<Criar>
+04. Configurações da Máquina Virtual TrueNAS (Propriedades/Configurações)
+	Sistema
+		Processador
+			Processadores: 02 CPUs
+			Recursos Estendidos: Habilitar PAE/NX
+	Monitor
+		Tela
+			Memória de Vídeo: 128MB
+			Aceleração: Habilitar Aceleração 3D
+	Áudio
+		Habilitar Áudio: Desabilitar
+	Rede
+		Adaptador 1 (LAN)
+			Habilitar Placa de Rede
+			Conectado a: Rede Interna
+			Nome: (deixar o padrão do sistema: intnet)
+<OK>
+
+Instalação do TrueNAS: https://www.truenas.com/docs/core/gettingstarted/install/
+
+Terceira etapa: Instalação do TrueNAS (localizar a ISO descompactada)
+01. VM TrueNAS: Iniciar
+02. Selecione o disco rígido de boot
+		Selecionar um arquivo de disco óptico virtual
+03. Seletor de Discos Ópticos
+		Acrescentar
+		Selecione o arquivo de disco óptico virtual: TrueNAS-12.0-U2.1.iso
+		<Abrir>
+04. Not Attached
+		Selecionar: TrueNAS-12.0-U2.1.iso
+		<Escolher>
+<Iniciar>
+
+01. TrueNAS 12.x Console Setup
+		1 Install/Upgrade <OK>
+02. TrueNAS
+		<Yes>
+03. Choose destination media
+		ada0 VBOX HARDDISK -- 16.0 GiB (Space Bar) - <OK>
+04. TrueNAS installation
+		<Yes>
+05. Enter your root password:
+		Password: pti@2021
+		Confirm Password: pti@2021
+		<OK>
+06. TrueNAS Boot Mode
+		<Boot via BIOS>
+07. The TrueNAS installation on ada0 succeeded!
+		<OK>
+08. TrueNAS 12.x Console Setup
+		3. Reboot System <OK>
+
+Observação: No Oracle VirtualBOX existe uma falha onde o CD-Room do TrueNAS não é ejetado 
+no final da Instalação, sendo necessário desmontar o CD-Room e rebotar a máquina virtual.
+
+Endereçamento das Interfaces do TrueNAS
+01. Interface LAN: Padrão de configuração via DHCP
+
+Menu de configuração do console: https://www.truenas.com/docs/core/gettingstarted/consolesetupmenu/
+
+Quarta etapa: Configuração da Interface do TrueNAS
+01. Configure Network Interface
+		Select an interface (q to quit): 1 <Enter>
+		Remove the current settings of this interface? (y/n): n <Enter>
+		Configure interface for DHCP? (y/n): n <Enter>
+		Configure IPv4? (y/n): y <Enter>
+		Interface name: LAN <Enter>
+		IPv4 Address: 172.16.1.30/24 <Enter>
+		Configure IPv6? (y/n): n <Enter>
+		Configure failover settings? (y/n): n <Enter>
+02. Configure Default Route
+		Configure IPv4 Default Route? (y/n): y <Enter>
+		IPv4 Default Route: 172.16.1.254 <Enter>
+		Configure IPv6 Default Route? (y/n): n <Enter>
+03. Configure DNS 
+		DNS Domain [local]: pti.intra <Enter>
+		DNS Nameserver 1: 172.16.1.10 <Enter>
+		DNS Nameserver 2: 172.16.1.254 <Enter>
+		DNS Nameserver 3: 8.8.8.8 <Enter>
+04. Shell
+		ping google.com <Enter>
+		exit
