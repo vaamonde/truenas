@@ -8,13 +8,13 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Data de criação: 31/03/2021
-Data de atualização: 31/03/2021
-Versão: 0.01
-Testado e homologado no TrueNAS 12.x
+Data de atualização: 02/04/2021
+Versão: 0.02
+Testado e homologado no TrueNAS Core 12.x
 
-Seleção do Hardware do TrueNAS: https://www.truenas.com/docs/core/introduction/corehardwareguide/
+Seleção do Hardware do TrueNAS Core: https://www.truenas.com/docs/core/introduction/corehardwareguide/
 
-Primeira etapa: Download da ISO do TrueNAS (Link direto sem necessidade de e-mail)
+Primeira etapa: Download da ISO do TrueNAS Core (Link direto sem necessidade de e-mail)
 01. Link de download do TrueNAS: https://download.freenas.org/12.0/STABLE/U2.1/x64/
 
 Segunda etapa: Criação e Configuração da Máquina Virtual no Oracle VirtualBOX
@@ -22,7 +22,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 01. Ferramentas;
 	Novo
 02. Nome e Sistema Operacional:
-	Nome: TrueNAS
+	Nome: TrueNAS-Core
 	Pasta da Máquina: (deixar o padrão do sistema) 
 	Tipo: BSD
 	Versão: FreeBSD (64-bit)
@@ -43,7 +43,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	Localização: (deixar o padrão do sistema)
 	Tamanho do disco: 16GB
 	<Criar>
-04. Configurações da Máquina Virtual TrueNAS (Propriedades/Configurações)
+04. Configurações da Máquina Virtual TrueNAS Core (Propriedades/Configurações)
 	Sistema
 		Processador
 			Processadores: 02 CPUs
@@ -61,10 +61,10 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 			Nome: (deixar o padrão do sistema: intnet)
 <OK>
 
-Instalação do TrueNAS: https://www.truenas.com/docs/core/gettingstarted/install/
+Instalação do TrueNAS Core: https://www.truenas.com/docs/core/gettingstarted/install/
 
-Terceira etapa: Instalação do TrueNAS (localizar a ISO descompactada)
-01. VM TrueNAS: Iniciar
+Terceira etapa: Instalação do TrueNAS Core (localizar a ISO descompactada)
+01. VM TrueNAS-Core: Iniciar
 02. Selecione o disco rígido de boot
 		Selecionar um arquivo de disco óptico virtual
 03. Seletor de Discos Ópticos
@@ -76,7 +76,7 @@ Terceira etapa: Instalação do TrueNAS (localizar a ISO descompactada)
 		<Escolher>
 <Iniciar>
 
-01. TrueNAS 12.x Console Setup
+01. TrueNAS Core 12.x Console Setup
 		1 Install/Upgrade <OK>
 02. TrueNAS
 		<Yes>
@@ -98,12 +98,12 @@ Terceira etapa: Instalação do TrueNAS (localizar a ISO descompactada)
 Observação: No Oracle VirtualBOX existe uma falha onde o CD-Room do TrueNAS não é ejetado 
 no final da Instalação, sendo necessário desmontar o CD-Room e rebotar a máquina virtual.
 
-Endereçamento das Interfaces do TrueNAS
+Endereçamento das Interfaces do TrueNAS Core
 01. Interface LAN: Padrão de configuração via DHCP
 
 Menu de configuração do console: https://www.truenas.com/docs/core/gettingstarted/consolesetupmenu/
 
-Quarta etapa: Configuração da Interface do TrueNAS
+Quarta etapa: Configuração da Interface do TrueNAS Core
 01. Configure Network Interface
 		Select an interface (q to quit): 1 <Enter>
 		Remove the current settings of this interface? (y/n): n <Enter>
