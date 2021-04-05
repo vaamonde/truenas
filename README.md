@@ -44,8 +44,8 @@ TrueNAS é a marca para uma variedade de sistemas operacionais de armazenamento 
 
 Em Março de 2020 a ixSystems resolveu unificar as duas soluções em uma só, chamando de TrueNAS Core (Community Supported, Open Source, Rapid Development e Early Availability) que será disponibilizado a partir da versão 12.x, o FreeNAS foi suportado até a versão 11.x.
 
-[![Instalação do TrueNAS Core 12.x]()]( "Instalação do TrueNAS Core 12.x")
+[![Instalando o TrueNAS](http://img.youtube.com/vi/AJIABquiwlI/0.jpg)](http://www.youtube.com/watch?v=AJIABquiwlI "Instalando o TrueNAS")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=AJIABquiwlI
 
 Documentação da vídeo aula: https://github.com/vaamonde/truenas/blob/main/script/Etapa-001-InstalacaoDoTrueNAS-12.x.txt
